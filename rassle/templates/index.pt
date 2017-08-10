@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>rassle</title>
+    </head>
+    <body>
+        <ul>
+            <li tal:repeat="movie movies"><a href="${request.link(movie)}">${movie.title}</a></li>
+        </ul>
+    </body>
+</html>

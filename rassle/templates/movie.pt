@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>${title}</title>
+    <link href="http://vjs.zencdn.net/6.2.4/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/6.2.4/video.js"></script>
+    <script src="http://d17c8ee2a4nc2e.cloudfront.net/assets/js/videojs.framebyframe.min.js"></script>
+</head>
+<body>
+  <video id="my-player" class="video-js">
+    <source src="http://d17c8ee2a4nc2e.cloudfront.net/${mp4}" type='video/mp4'>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+  <script>
+    var video = videojs("my-player", {
+	controls: true,
+	playbackRates: [0.25, 0.5, 0.75, 1, 2],
+	fluid: true,
+	aspectRatio: "16:9",
+	autoplay: true,
+	plugins: {
+	    framebyframe: {
+		fps: 23.98,
+		steps: [
+		    { text: "-5", step: -5 },
+		    { text: "-1", step: -1 },
+		    { text: "+1", step: 1 },
+		    { text: "+5", step: 5 },
+		]
+	    }
+	}
+    });
+  </script>
+</body>
+</html>
+
