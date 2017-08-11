@@ -23,6 +23,8 @@ setup(
     install_requires=[
         'morepath',
         'more.chameleon',
+        'more.pony',
+        'boto3',
     ],
     extras_require=dict(
         test=[

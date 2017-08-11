@@ -1,17 +1,18 @@
+from pony.orm import *
+from datetime import datetime
+
+db = Database()
+
+
 class Root(object):
     @property
+    @db_session
     def movies(self):
-        import boto3
-        movies = []
-        s3 = boto3.resource('s3')
-        bucket = s3.Bucket('wrestling-pics')
-        for obj in bucket.objects.all():
-            movies.append(Movie(obj.key))
-        return movies
-
-class Movie(object):
-    def __init__(self, mp4):
-        self.mp4 = mp4
-        self.title = mp4
+        res = select(m for m in Movie)
+        return res
 
 
+class Movie(db.Entity):
+    fname = PrimaryKey(str)
+    dt = Optional(datetime)
+    title = Optional(str)

@@ -1,6 +1,7 @@
 from more.chameleon import ChameleonApp
+from more.pony import PonyApp
 
-class App(ChameleonApp):
+class App(ChameleonApp, PonyApp):
     pass
 
 

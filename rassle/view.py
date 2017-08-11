@@ -14,5 +14,5 @@ def view_root(self, request):
 def view_movie(self, request):
     return {
         'title': self.title,
-        'mp4': self.mp4,
+        'fname': self.fname,
     }

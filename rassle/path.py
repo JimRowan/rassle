@@ -7,6 +7,6 @@ def get_root():
     return model.Root()
 
 
-@App.path(model=model.Movie, path='/movie/{mp4}')
-def get_movie(mp4):
-    return model.Movie(mp4)
+@App.path(model=model.Movie, path='/movie/{fname}')
+def get_movie(fname):
+    return model.Movie[fname]
