@@ -10,6 +10,12 @@ def view_root(self, request):
     }
 
 
+@App.view(model=model.Root, name='robots.txt')
+def get_robots(self, request):
+    return """User-agent: *
+Disallow: /"""
+
+
 @App.html(model=model.Movie, template='movie.pt')
 def view_movie(self, request):
     return {

@@ -6,7 +6,7 @@ from . import model
 def get_root():
     return model.Root()
 
-
 @App.path(model=model.Movie, path='/movie/{fname}')
 def get_movie(fname):
-    return model.Movie[fname]
+    return model.Movie.get(fname=fname)
+        

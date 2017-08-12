@@ -14,5 +14,6 @@ class Root(object):
 
 class Movie(db.Entity):
     fname = PrimaryKey(str)
-    dt = Optional(datetime)
+    dt = Optional(str)    # string representation of datetime
     title = Optional(str)
+    eventtype = Optional(str)
