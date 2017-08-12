@@ -25,6 +25,7 @@ setup(
         'more.chameleon',
         'more.pony',
         'boto3',
+        'waitress',
     ],
     extras_require=dict(
         test=[

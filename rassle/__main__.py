@@ -1,4 +1,6 @@
 import morepath
+import waitress
+import os
 from .app import App
 from .model import db
 from pony.orm import sql_debug
@@ -10,7 +12,10 @@ def run():
     db.generate_mapping(create_tables=True)
     
     morepath.autoscan()
-    morepath.run(App())
+    if os.getenv('RUN_ENV') == 'dev':
+        morepath.run(App(), host='0.0.0.0', port='80')
+    else:
+        waitress.serve(App(), listen="*:80")
 
 
 if __name__ == '__main__':
