@@ -8,8 +8,3 @@ class App(ChameleonApp, PonyApp):
 @App.template_directory()
 def get_template_directory():
     return 'templates'
-
-
-@App.setting_section(section='chameleon')
-def get_chameleon_settings():
-    return {'debug': True}

@@ -26,6 +26,7 @@ setup(
         'more.pony',
         'boto3',
         'waitress',
+        'pyyaml',
     ],
     extras_require=dict(
         test=[

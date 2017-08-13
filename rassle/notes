@@ -1,2 +1,6 @@
 #        from morepath import pdbsupport
 #        pdbsupport.set_trace()
+    #directive_logger = logging.getLogger('morepath.directive')
+    #directive_logger.addHandler(logging.StreamHandler())
+    #directive_logger.setLevel(logging.DEBUG)
+
