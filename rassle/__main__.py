@@ -34,6 +34,8 @@ def run():
     if os.getenv('RUN_ENV') == 'dev':
         morepath.run(app, host='0.0.0.0', port='80')
     else:
+        waitress_logger = logging.getLogger('waitress')
+        waitress_logger.setLevel(logging.INFO)
         waitress.serve(app, listen="*:80")
 
 
