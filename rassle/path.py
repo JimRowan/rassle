@@ -1,11 +1,6 @@
 from .app import App
 from . import model
 
-@App.path(model=model.Login, path='login')
-def get_login():
-    return model.Login()
-
-
 @App.path(model=model.Root, path='/')
 def get_root():
     return model.Root()

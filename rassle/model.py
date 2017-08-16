@@ -1,11 +1,7 @@
 from pony.orm import *
-from datetime import datetime
+
 
 db = Database()
-
-
-class Login(object):
-        pass
 
 
 class Root(object):

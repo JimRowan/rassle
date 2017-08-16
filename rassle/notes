@@ -4,3 +4,39 @@
     #directive_logger.addHandler(logging.StreamHandler())
     #directive_logger.setLevel(logging.DEBUG)
 
+
+	plugins: {
+	    framebyframe: {
+		fps: 23.98,
+		steps: [
+		    { text: "-5", step: -5 },
+		    { text: "-1", step: -1 },
+		    { text: "+1", step: 1 },
+		    { text: "+5", step: 5 },
+		]
+	    }
+	}
+  <script src="./assets/js/videojs.framebyframe.min.js"></script>
+    <script src="//cdn.rawgit.com/erasche/videojs-framebyframe/c9dd2b6bf0e7b527aa505d0e9e19ffe756eb1ee5/video-framebyframe.js"></script>
+
+from more.webassets import WebassetsApp
+
+class App(WebassetsApp):
+    pass
+
+@App.webasset_path()
+def get_asset_path():
+    return 'assets/js'
+
+@App.webasset_output()
+def get_output_path():
+    return 'assets/bundles'
+
+@App.webasset_filter('js')
+def get_js_filter():
+    return 'rjsmin'
+
+@App.webasset('jquery')
+def get_jquery_asset():
+    yield 'jquery.js'
+
