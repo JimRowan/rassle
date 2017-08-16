@@ -6,7 +6,7 @@ name = 'rassle'
 description = (
     'initial morepath rassle app'
 )
-version = '0.0.0'
+version = '0.0.1'
 
 
 setup(
@@ -24,7 +24,7 @@ setup(
         'morepath',
         'more.chameleon',
         'more.pony',
-        'more.jwtauth',
+        'more.basicauth',
         'boto3',
         'waitress',
         'pyyaml',
