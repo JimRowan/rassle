@@ -16,6 +16,10 @@ def setup_db(app):
 
 
 def run():
+    directive_logger = logging.getLogger('morepath.directive')
+    directive_logger.addHandler(logging.StreamHandler())
+    directive_logger.setLevel(logging.DEBUG)
+    
     with open('settings.yml') as config:
         settings_dict = yaml.load(config)
 

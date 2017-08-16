@@ -24,6 +24,7 @@ setup(
         'morepath',
         'more.chameleon',
         'more.pony',
+        'more.jwtauth',
         'boto3',
         'waitress',
         'pyyaml',

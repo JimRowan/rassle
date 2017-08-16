@@ -4,6 +4,10 @@ from datetime import datetime
 db = Database()
 
 
+class Login(object):
+        pass
+
+
 class Root(object):
     @property
     @db_session
