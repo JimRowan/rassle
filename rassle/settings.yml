@@ -1,0 +1,10 @@
+database:
+  provider: sqlite
+  filename: rassle.sqlite
+  create_db: True
+
+debugging:
+  sql: True
+
+chameleon:
+  debug: True
